@@ -3,14 +3,15 @@
 
 #include "Serializer.h"
 
+template <typename T>
 class Matrix{};
 class Vector{};
 
 template <typename T>
 class Layer{
 public:
-    virtual const T* forward(const T* input);
-    virtual const T* backward(const T* grad_output); 
+    virtual const Matrix<T>* forward(const Matrix<T>* input);
+    virtual const Matrix<T>* backward(const Matrix<T>* grad_output); 
 
     virtual Serializer& make_serializer();
 };
