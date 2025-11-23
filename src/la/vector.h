@@ -139,7 +139,7 @@ std::size_t Vector<T>::size() const {
 
 template <typename T>
 [[nodiscard]]
-T& Vector<T>::operator[](std::size_t i) const {
+T& Vector<T>::operator[](std::size_t i) {
     return data_[i];
 }
 
