@@ -12,8 +12,8 @@ private:
     T _b;
 public:
     LinearGrad(){
-        _a == Matrix();
-        _b == Matrix();
+        _a = Matrix();
+        _b = Matrix();
     }
 
     void calculate(const &T last_output, const &T grad_output){
