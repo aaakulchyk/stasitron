@@ -11,7 +11,7 @@ private:
     T _a;
     T _b;
 public:
-    void calculate(const &T last_output, const &T grad_output){
+    void calculate(const T& last_output, const T& grad_output){
         T last_input_T = last_input.transpose();
         last_input_T.multiply(grad_output, _a);
         grad_output.sum_rows(_b);
