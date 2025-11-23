@@ -11,11 +11,6 @@ private:
     T _a;
     T _b;
 public:
-    LinearGrad(){
-        _a = Matrix();
-        _b = Matrix();
-    }
-
     void calculate(const &T last_output, const &T grad_output){
         T last_input_T = last_input.transpose();
         last_input_T.multiply(grad_output, _a);
