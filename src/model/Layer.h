@@ -1,20 +1,21 @@
 #ifndef LAYER_H
 #define LAYER_H
 
-class Matrix;
-class Vector;
-class Serializer;
+#include "Serializer.h"
 
+class Matrix{};
+class Vector{};
+
+template <typename T>
 class Layer{
 public:
-    virtual const Vector* forward(const Vector* input);
-    virtual const Matrix* forward(const Matrix* input); 
+    virtual const T* forward(const T* input);
+    virtual const T* backward(const T* grad_output); 
 
-    virtual const Vector* backward(const Vector* input);
-    virtual const Matrix* backward(const Matrix* input); 
-
-    virtual Serializer& get_serializer();
+    virtual Serializer& make_serializer();
 };
+
+
 
 
 #endif
